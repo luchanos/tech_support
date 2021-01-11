@@ -1,2 +1,4 @@
 pytest-asyncio==0.14.0
 asyncpg==0.21.0
+yoyo-migrations==7.2.1
+psycopg2-binary==2.8.6
