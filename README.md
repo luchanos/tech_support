@@ -4,7 +4,12 @@ We try to create project for technical service of some devices. I think for medi
 TODO LIST:
 1. Add new column created_dt for orders;
 2. Add delete/update/get methods for orders manager;
-3. Add consumer for RabbitMQ.
+3. Refactoring Sender and Consumer:
+    - make is_active flags + dependencies;
+    - make retry for sending messages;
+    - add prefetch_count;
+    - add durable parameter for queue and delivery mode for messages;
+    - add manual ack for consumer.
 
 # ORDER CREATION MECHANISM
 So, we can create order by two ways:
