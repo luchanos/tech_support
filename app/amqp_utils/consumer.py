@@ -7,12 +7,15 @@ class AioPikaConsumer:
         self.routing_key = routing_key
         self.connection = None
 
-    async def setup(self):
+    async def _connect(self):
         self.connection = await aio_pika.connect_robust(self.amqp_url)
+        self.channel = await self.connection.channel()
+
+    async def setup(self):
+        await self._connect()
 
     async def get_message(self, queue_name):
-        channel = await self.connection.channel()
-        queue = await channel.declare_queue(queue_name, auto_delete=False, durable=True)
+        queue = await self.channel.declare_queue(queue_name, auto_delete=False, durable=True)
 
         async with queue.iterator() as queue_iter:
             async for message in queue_iter:
