@@ -2,14 +2,15 @@
 We try to create project for technical service of some devices. I think for medical devices, because I'm good in it))
 
 TODO LIST:
-1. Add new column created_dt for orders;
-2. Add delete/update/get methods for orders manager;
-3. Refactoring Sender and Consumer:
+. Add delete/update/get methods for orders manager;
+. Refactoring Sender and Consumer:
     - make is_active flags + dependencies;
     - make retry for sending messages;
     - add prefetch_count;
     - add durable parameter for queue and delivery mode for messages;
-    - add manual ack for consumer.
+    - add manual ack for consumer;
+. Add fixture for cleaning tables after test and before test.
+
 
 # ORDER CREATION MECHANISM
 So, we can create order by two ways:

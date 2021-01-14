@@ -17,6 +17,7 @@ class AioPikaConsumer:
     async def get_message(self, queue_name):
         queue = await self.channel.declare_queue(queue_name, auto_delete=False, durable=True)
 
+        # todo luchanos - here is auto ack! Needs to be done with manual ack.
         async with queue.iterator() as queue_iter:
             async for message in queue_iter:
                 async with message.process():

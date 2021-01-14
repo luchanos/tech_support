@@ -19,12 +19,3 @@ class AioPikaSender:
         message = aio_pika.Message(body=str(message).encode())
         exchange = await self.channel.get_exchange(name=exchange)
         await exchange.publish(message, routing_key=routing_key)
-
-    async def send(self, message):
-        message = aio_pika.Message(body=message.encode())
-
-        async with self.connection:
-            channel = await self.connection.channel()
-
-            await channel.default_exchange.publish(message=message,
-                                                   routing_key=self.routing_key)
