@@ -35,3 +35,15 @@ async def test_delete_order(db_pool):
     await order_manager.delete_order(order_id)
     orders = await db_pool.fetch(GET_ORDER_FROM_DATABASE, order_id)
     assert len(orders) == 0
+
+
+@pytest.mark.asyncio
+async def test_get_order(db_pool):
+    order_id = await create_order_in_database(db_pool=db_pool,
+                                              agent_id=1,
+                                              message="some malfunction message",
+                                              serial_no="A123",
+                                              status=1)
+    order_manager = OrdersManager(db_pool)
+    await order_manager.get_order_by_id(order_id)
+    #todo luchanos доделать тест

@@ -2,7 +2,6 @@
 We try to create project for technical service of some devices. I think for medical devices, because I'm good in it))
 
 TODO LIST:
-. Add delete/update/get methods for orders manager;
 . Refactoring Sender and Consumer:
     - make is_active flags + dependencies;
     - make retry for sending messages;
@@ -10,6 +9,7 @@ TODO LIST:
     - add durable parameter for queue and delivery mode for messages;
     - add manual ack for consumer;
 . Add fixture for cleaning tables after test and before test.
+. Create Order dataclass + Schema class for order
 
 
 # ORDER CREATION MECHANISM
