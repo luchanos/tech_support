@@ -40,3 +40,19 @@ def create_test_database():
     """
     )
     run_migrations("./orders_db/migrations")
+
+
+TABLES = ['orders', ]
+
+
+@pytest.fixture(autouse=True, scope='function')
+async def clean_tables(db_pool):
+    cleaner_sql = """TRUNCATE TABLE %s"""
+
+    for table in TABLES:
+        await db_pool.fetch(cleaner_sql % (table, ))
+
+    yield
+
+    for table in TABLES:
+        await db_pool.fetch(cleaner_sql % (table, ))
