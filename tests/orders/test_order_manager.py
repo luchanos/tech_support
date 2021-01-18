@@ -1,6 +1,8 @@
 import pytest
 from app.orders import OrdersManager
 
+# todo luchanos перевести всё на ручки Django или Sanic
+
 GET_ORDER_FROM_DATABASE = """SELECT * FROM orders WHERE order_id = $1"""
 CREATE_ORDER_QUERY = """INSERT INTO orders (agent_id, message, serial_no, status) 
 VALUES ($1, $2, $3, $4) RETURNING order_id"""
