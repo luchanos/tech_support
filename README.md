@@ -24,3 +24,8 @@ request via api-endpoint;
 
 For example you are service distributor of technics and you collect service reports on your side. Some of them needs
 to be proccessed by tech_system. So you can send special message to queue for creation new service order.
+
+# FOR PACKAGE INSTALLATION
+use poetry
+1. pip install poetry;
+2. if you need to add some dependencies do it in pyproject.toml file.
