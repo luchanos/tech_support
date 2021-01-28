@@ -10,6 +10,7 @@ TODO LIST:
     - add manual ack for consumer;
 . Add fixture for cleaning tables after test and before test.
 . Create Order dataclass + Schema class for order
+. add poetry to the project
 
 
 # ORDER CREATION MECHANISM
