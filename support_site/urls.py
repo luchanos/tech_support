@@ -17,9 +17,10 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path
 
-from support.views import create_order
+from support.views import create_order, main_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^create_order/$', create_order)
+    url(r'^create_order/$', create_order),
+    url(r'^home/', main_page)
 ]
